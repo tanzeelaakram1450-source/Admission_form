@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Admission Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f2f4f7;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4a6cf7;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #4a6cf7;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3658d4;
+        }
+
+        #message {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Admission Form</h1>
+
+    <p class="description">
+        Please fill in the information below to apply for admission.
+    </p>
+
+    <form id="admissionForm">
+
+        <!-- Student Name -->
+        <div class="form-group">
+            <label for="student_name">Student Name</label>
+            <input
+                type="text"
+                id="student_name"
+                name="student_name"
+                placeholder="Enter student name"
+                required
+            >
+        </div>
+
+        <!-- Father Name -->
+        <div class="form-group">
+            <label for="father_name">Father Name</label>
+            <input
+                type="text"
+                id="father_name"
+                name="father_name"
+                placeholder="Enter father name"
+                required
+            >
+        </div>
+
+        <!-- Email and Phone -->
+        <div class="row">
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@gmail.com"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="03XXXXXXXXX"
+                    required
+                >
+            </div>
+
+        </div>
+
+        <!-- Date of Birth and Gender -->
+        <div class="row">
+
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth</label>
+                <input
+                    type="date"
+                    id="date_of_birth"
+                    name="date_of_birth"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+
+                <select
+                    id="gender"
+                    name="gender"
+                    required
+                >
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- Course -->
+        <div class="form-group">
+
+            <label for="course">Course / Class</label>
+
+            <select
+                id="course"
+                name="course"
+                required
+            >
+                <option value="">Select Course / Class</option>
+                <option value="English Language">English Language</option>
+                <option value="Spoken English">Spoken English</option>
+                <option value="BS English">BS English</option>
+                <option value="Computer Course">Computer Course</option>
+                <option value="AI Automation">AI Automation</option>
+                <option value="Web Development">Web Development</option>
+            </select>
+
+        </div>
+
+        <!-- Previous Qualification -->
+        <div class="form-group">
+
+            <label for="qualification">
+                Previous Qualification
+            </label>
+
+            <input
+                type="text"
+                id="qualification"
+                name="qualification"
+                placeholder="e.g. Matric, Intermediate, BS"
+                required
+            >
+
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+
+            <label for="address">Address</label>
+
+            <textarea
+                id="address"
+                name="address"
+                placeholder="Enter complete address"
+                required
+            ></textarea>
+
+        </div>
+
+        <!-- Admission Date -->
+        <div class="form-group">
+
+            <label for="admission_date">
+                Admission Date
+            </label>
+
+            <input
+                type="date"
+                id="admission_date"
+                name="admission_date"
+                required
+            >
+
+        </div>
+
+        <!-- Submit -->
+        <button type="submit">
+            Submit Admission Form
+        </button>
+
+    </form>
+
+    <div id="message"></div>
+
+</div>
+
+
+<script>
+
+    // ==========================================
+    // YOUR N8N WEBHOOK URL
+    // ==========================================
+
+    const WEBHOOK_URL =
+        "https://tanzeela122.app.n8n.cloud/webhook/dde2c59a-ff5d-4102-84df-df17c0af6f3c";
+
+
+    // ==========================================
+    // FORM SUBMISSION
+    // ==========================================
+
+    document
+        .getElementById("admissionForm")
+        .addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            const message =
+                document.getElementById("message");
+
+            const form =
+                document.getElementById("admissionForm");
+
+            // Get form data
+            const formData =
+                new FormData(form);
+
+            // Convert FormData into JSON
+            const data =
+                Object.fromEntries(formData.entries());
+
+
+            message.innerText =
+                "Submitting your admission form...";
+
+
+            try {
+
+                const response =
+                    await fetch(WEBHOOK_URL, {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(data)
+
+                    });
+
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Failed to submit form"
+                    );
+                }
+
+
+                message.innerText =
+                    "Admission form submitted successfully!";
+
+
+                // Clear form
+                form.reset();
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                message.innerText =
+                    "Something went wrong. Please try again.";
+
+            }
+
+        });
+
+</script>
+
+</body>
+</html>
